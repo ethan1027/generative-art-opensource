@@ -48,9 +48,10 @@ const generateMetadata = (_dna, _edition, _attributesList) => {
   let dateTime = Date.now();
   let tempMetadata = {
     dna: _dna.join(""),
-    name: `#${_edition}`,
+    name: `Lucky Cat ${_edition}`,
     description: description,
     image: `${baseImageUri}/${_edition}`,
+    external_uri: `https://my-website-uri/${_edition}`,
     edition: _edition,
     date: dateTime,
     attributes: _attributesList,
@@ -62,8 +63,8 @@ const generateMetadata = (_dna, _edition, _attributesList) => {
 const getAttributeForElement = (_element) => {
   let selectedElement = _element.layer.selectedElement;
   let attribute = {
-    name: selectedElement.name,
-    rarity: selectedElement.rarity,
+    trait_type: selectedElement.path.split('/')[1], 
+    value: selectedElement.name
   };
   return attribute;
 };
@@ -230,7 +231,7 @@ const startCreating = async () => {
         attributesList.push(getAttributeForElement(element));
       });
       // add an image signature as the edition count to the top left of the image
-      signImage(`#${editionCount}`);
+      // signImage(`#${editionCount}`);
       // write the image to the output directory
       saveImage(editionCount);
       let nftMetadata = generateMetadata(newDna, editionCount, attributesList);
