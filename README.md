@@ -1,12 +1,6 @@
 # generative-art-opensource
 Create generative art by using the canvas api and node js, feel free to contribute to this repo with new ideas.
 
-
-[<img src="http://www.google.com.au/images/nav_logo7.png">](http://google.com.au/)
-
-[![Foo](http://www.google.com.au/images/nav_logo7.png)](http://google.com.au/)
-
-
 # Project Setup
 - install `node.js` on your local system (https://nodejs.org/en/)
 - clone the repository to your local system `git@github.com:HashLips/generative-art-opensource.git`
